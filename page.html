@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Material design lite admin theme</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content="My own network project">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/material.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script src="js/script.js"></script>
+		<!-- Vector map css -->
+		<link rel="stylesheet" type="text/css" href="css/jqvmap.css">
+		<script type="text/javascript">
+		$(window).load(function() {
+			$(".loader").css("display", "none");
+		})
+		</script>
+	</head>
+	<body>
+		<div class="loader">
+			<div class="center">
+				<p class="mdl-spinner mdl-js-spinner is-active"></p>
+			</div>
+		</div>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+			<!-- Horizontal bar -->
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Navigation -->
+					<nav class="mdl-navigation">
+						<a class="mdl-navigation__link material-icons" id="notifications-icon" href="">notifications</a>
+						<div class="mdl-tooltip" for="notifications-icon">Notifications</div>
+						<a class="mdl-navigation__link material-icons" id="settings-icon" href="">settings</a>
+						<div class="mdl-tooltip" for="settings-icon">Settings</div>
+						<a class="mdl-navigation__link material-icons" id="bug-icon" href="">bug_report</a>
+						<div class="mdl-tooltip" for="bug-icon">Bug report</div>
+					</nav>
+					<div class="mdl-layout-spacer"></div>
+					<!-- Search bar -->
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+						<label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+							<i class="material-icons">search</i>
+						</label>
+						<div class="mdl-textfield__expandable-holder">
+							<input class="mdl-textfield__input" type="text" name="sample" id="waterfall-exp" />
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- Vertical  bar -->
+			<div class="mdl-layout__drawer">
+				<!-- Header - user infos -->
+				<div class="mdl-grid account-member" id="member-menu">
+					<div class="mdl-cell mdl-cell--7-col">
+						<img src="https://download.unsplash.com/1/type-away-numero-dos.jpg" class="mdl-cell--12-col">
+					</div>
+					<div class="mdl-cell--middle mdl-cell--5-col  mdl-cell--12-col-tablet">
+						<p>John Doe</p>
+					</div>
+				</div>
+				<!-- User infos menu -->
+				<ul class="mdl-menu mdl-js-menu" for="member-menu">
+					<li class="mdl-menu__item">My profil</li>
+					<li class="mdl-menu__item">Settings</li>
+				</ul>
+				<!-- Navigation -->
+				<nav class="mdl-navigation">
+						<a class="mdl-navigation__link vertical-menu" href="">
+							<i class="material-icons">dashboard</i>
+							<p>Dashboard</p>
+						</a>
+						<a class="mdl-navigation__link" href="">
+							<i class="material-icons">library_books</i>
+							<p>Pages</p>
+						</a>
+						<a class="mdl-navigation__link" href="">
+							<i class="material-icons">people</i>
+							<p>Users</p>
+						</a>
+						<a class="mdl-navigation__link" href="">
+							<i class="material-icons">email</i>
+							<p>Mail</p>
+						</a>
+				</nav>
+			</div>
+			<!-- Content -->
+			<main class="mdl-layout__content">
+				<div class="mdl-grid">
+					<!-- Site bar -->
+					<div class="mdl-cell mdl-cell--12-col site-bar">
+						<ul>
+							<i class="material-icons md-dark md-inactive">home</i>
+							<li><a href="#">Home</a></li>
+							<i class="material-icons md-dark md-inactive">navigate_next</i>
+							<li><a href="#">Page</a></li>
+						</ul>
+					</div>
+					<!-- Message box -->
+					<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-shadow--4dp message-box">
+						<p class="mdl-cell mdl-cell--11-col mdl-cell--3-col-phone mdl-cell--7-col-tablet">Latest announcement</p>
+						<p class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone  mdl-cell--1-col-tablet close" onclick="$('.message-box').hide()">X</p>
+						<p class="mdl-cell mdl-cell--12-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore.</p>						
+					</div>
+					<!-- Alert box -->
+					<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-shadow--4dp alertbox info">
+						<p class="mdl-cell mdl-cell--11-col mdl-cell--3-col-phone mdl-cell--7-col-tablet">Info</p>
+						<p class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone  mdl-cell--1-col-tablet close" onclick="hide_alertbox('info')">X</p>
+						<p class="mdl-cell mdl-cell--12-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore.</p>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-shadow--4dp alertbox warning">
+						<p class="mdl-cell mdl-cell--11-col mdl-cell--3-col-phone mdl-cell--7-col-tablet">Warning</p>
+						<p class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone  mdl-cell--1-col-tablet close" onclick="hide_alertbox('warning')">X</p>
+						<p class="mdl-cell mdl-cell--12-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore.</p>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-shadow--4dp alertbox danger">
+						<p class="mdl-cell mdl-cell--11-col mdl-cell--3-col-phone mdl-cell--7-col-tablet">Danger</p>
+						<p class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone  mdl-cell--1-col-tablet close" onclick="hide_alertbox('danger')">X</p>
+						<p class="mdl-cell mdl-cell--12-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore.</p>
+					</div>
+					<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-shadow--4dp alertbox success">
+						<p class="mdl-cell mdl-cell--11-col mdl-cell--3-col-phone mdl-cell--7-col-tablet">Success</p>
+						<p class="mdl-cell mdl-cell--1-col mdl-cell--1-col-phone  mdl-cell--1-col-tablet close" onclick="hide_alertbox('success')">X</p>
+						<p class="mdl-cell mdl-cell--12-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore.</p>
+					</div>
+					<!-- Left column -->
+					<div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid">
+						<!-- Chart visitors -->
+						<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-card mdl-shadow--4dp">
+							<div class="mdl-card__title mdl-cell mdl-cell--12-col mdl-grid">
+								<h2 class="mdl-card__title-text mdl-cell mdl-cell--8-col">Website visits</h2>
+								<button class="mdl-cell mdl-cell--2-col chart-legend mdl-color--indigo-500 mdl-color-text--white" disabled>
+									New visitors
+								</button>
+								<button class="mdl-cell mdl-cell--2-col chart-legend mdl-color--pink-500 mdl-color-text--white" disabled>
+									Returning visitors
+								</button>
+								<canvas class="mdl-cell mdl-cell--12-col" id="income" style="min-height: 40vh"></canvas>
+							</div>
+						</div>
+						<!-- Referal visits tables -->
+						<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-card mdl-shadow--4dp">
+							<div class="mdl-card__title mdl-cell mdl-cell--12-col mdl-grid">
+								<h2 class="mdl-card__title-text mdl-cell mdl-cell--12-col">Referral traffic</h2>
+								<table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--12-col">
+									<thead>
+										<tr>
+											<th class="mdl-data-table__cell--non-numeric">Source</th>
+											<th>Sessions</th>
+											<th>% New sessions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="mdl-data-table__cell--non-numeric">Google.com</td>
+											<td>2500</td>
+											<td>35.08%</td>
+										</tr>
+										<tr>
+											<td class="mdl-data-table__cell--non-numeric">Facebook.com</td>
+											<td>1785</td>
+											<td>73.42%</td>
+										</tr>
+										<tr>
+											<td class="mdl-data-table__cell--non-numeric">Themeforest.net</td>
+											<td>1428</td>
+											<td>22.21%</td>
+										</tr>
+										<tr>
+											<td class="mdl-data-table__cell--non-numeric">techcrunch.com</td>
+											<td>786</td>
+											<td>45.50%</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!-- Vector map -->
+						<div class="mdl-cell mdl-cell--12-col mdl-grid mdl-card mdl-shadow--4dp">
+							<div class="mdl-card__title mdl-cell mdl-cell--12-col mdl-grid">
+								<h2 class="mdl-card__title-text mdl-cell mdl-cell--12-col"> Location visitors</h2>
+								<div id="vmap" style="width: 100%; min-height: 40vh;"></div>
+							</div>
+						</div>
+					</div>
+					<!-- Right column -->
+					<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mdl-cell--top">
+						<!-- Comments -->
+						<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
+							<div class="mdl-card__title mdl-card--expand social-card comments">
+								<div class="mdl-cell mdl-cell--12-col">
+									<p style="text-align: right;">85</p>
+									<p style="text-align: right;">Comments</p>
+								</div>
+							</div>
+							<div class="mdl-card__actions">
+							    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+							      View more
+							    </a>
+						    </div>
+						</div>
+						<!-- Facebook -->
+						<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--2dp">
+							<div class="mdl-card__title mdl-card--expand social-card facebook">
+								<div class="mdl-cell mdl-cell--12-col">
+									<p style="text-align: right;">15300</p>
+									<p style="text-align: right;">Fans</p>
+								</div>
+							</div>
+							<div class="mdl-card__actions">
+							    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+							      View more
+							    </a>
+						    </div>
+						</div>
+						<!-- Twitter -->
+						<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--2dp">
+							<div class="mdl-card__title mdl-card--expand social-card twitter">
+								<div class="mdl-cell mdl-cell--12-col">
+									<p style="text-align: right;">5200</p>
+									<p style="text-align: right;">Followers</p>
+								</div>
+							</div>
+							<div class="mdl-card__actions">
+							    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+							      View more
+							    </a>
+						    </div>
+						</div>
+						<!-- Instagram -->
+						<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--2dp">
+							<div class="mdl-card__title mdl-card--expand social-card instagram">
+								<div class="mdl-cell mdl-cell--12-col">
+									<p style="text-align: right;">1250</p>
+									<p style="text-align: right;">Followers</p>
+								</div>
+							</div>
+							<div class="mdl-card__actions">
+							    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+							      View more
+							    </a>
+						    </div>
+						</div>
+						<!-- Todo list -->
+						<div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--2dp mdl-color--teal-300 task-card">
+							<div class="mdl-card__title">
+								<h3 class="mdl-card__title-text mdl-color-text--white">My tasks</h3>
+							</div>
+							<div class="mdl-card__supporting-text mdl-color-text--white">
+								<ul>
+									<li>
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+											<input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked/>
+											<span class="mdl-checkbox__label">The first task</span>
+										</label>
+									</li>
+									<li>
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+											<input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" />
+											<span class="mdl-checkbox__label">The second task</span>
+										</label>
+									</li>
+									<li>
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+											<input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" />
+											<span class="mdl-checkbox__label">Other task</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+							<div class="mdl-card__actions mdl-card--border">
+							    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+							      View more
+							    </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+	</body>
+	<script src="js/material.min.js"></script>
+	<!-- Vector map -->
+	<script src="js/jquery.vmap.sampledata.js"></script>
+	<script src="js/jquery.vmap.js"></script>
+	<script src="js/maps/jquery.vmap.world.js"></script>
+	<!-- Chart.js -->
+	<script src="js/chart.js"></script>
+	<script>
+	$( document ).ready(function() {
+		var data = {
+		    labels: ["January", "February", "March", "April", "May", "June", "July"],
+		    datasets: [
+		        {
+		            label: "My First dataset",
+		            fillColor: "rgba(216,27,96,0.2)",
+		            strokeColor: "rgba(234,27,117,0.7)",
+		            pointColor: "rgba(234,27,117,0.7)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(234,27,117,0.7)",
+		            data: [65, 59, 80, 81, 56, 55, 40]
+		        },
+		        {
+		            label: "My Second dataset",
+		            fillColor: "rgba(31,67,136,0.2)",
+		            strokeColor: "rgba(31,67,136,0.7)",
+		            pointColor: "rgba(31,67,136,0.7)",
+		            pointStrokeColor: "#fff",
+		            pointHighlightFill: "#fff",
+		            pointHighlightStroke: "rgba(31,67,136,0.7)",
+		            data: [28, 48, 40, 19, 86, 27, 90]
+		        }
+		    ]
+		};
+		var income = document.getElementById("income").getContext("2d");
+		new Chart(income).Line(data);
+		jQuery('#vmap').vectorMap(
+		{
+		    map: 'world_en',
+		    backgroundColor: '#eeeeee',
+		    color: '#ffffff',
+		    hoverOpacity: 0.7,
+		    selectedColor: '#ea1b75',
+		    enableZoom: true,
+		    showTooltip: true,
+		    values: my_map,
+		    scaleColors: ['#C8EEFF', '#1f4388'],
+		    normalizeFunction: 'polynomial'
+		});
+	});
+	</script>
+</html>
